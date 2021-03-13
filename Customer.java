@@ -25,7 +25,7 @@ public class Customer {
      while (rentals.hasMoreElements()) {
         double thisAmount = 0;
         Rental each = (Rental) rentals.nextElement();
-        thisAmount = amountFor(each);
+        thisAmount = aRental(each);
 
         // add frequent renter points
         frequentRenterPoints ++;
@@ -47,7 +47,7 @@ public class Customer {
    }
 
    //determine amounts for each line
-   private double amountFor(Rental each) {
+   private double aRental(Rental each) {
       double thisAmount = 0;
       switch (each.getMovie().getPriceCode()) {
          case Movie.REGULAR:
