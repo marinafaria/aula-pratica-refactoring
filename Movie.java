@@ -3,7 +3,6 @@ public class Movie {
     public static final int  CHILDRENS = 2;
     public static final int  REGULAR = 0;
     public static final int  NEW_RELEASE = 1;
-    private Rental _rental;
 
     private String _title;
     private Price _price;
@@ -42,8 +41,6 @@ public class Movie {
     }
 
     public int getFrequentRenterPoints(int daysRented){
-        if ((_rental.getMovie().getPriceCode() == Movie.NEW_RELEASE)
-        && _rental.getDaysRented() > 1) return 2;
-        return 1;
+        return _price.getFrequentRenterPoints(daysRented);
     }
 }
